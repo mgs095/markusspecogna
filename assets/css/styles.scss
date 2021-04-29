@@ -1,7 +1,213 @@
-@import 'variables.scss';
+@import "variables.scss";
 
 html,
 body {
-  font: 300 16px/1em $font;
+  font: 300 18px/1.33em $font;
   color: $black;
+  letter-spacing: 0.05em;
+}
+
+::-moz-selection {
+  color: $black50;
+  background: $black10;
+}
+
+::selection {
+  color: $black50;
+  background: $black10;
+}
+
+main {
+  overflow: hidden;
+  padding-top: 100px;
+}
+
+a,
+button,
+input,
+fieldset,
+textarea {
+  text-decoration: none;
+
+  &:focus,
+  &:active {
+    outline: none;
+  }
+}
+
+h1 {
+  font: 300 32px/1.25em $font;
+}
+
+h2 {
+  font: 300 24px/1.25em $font;
+}
+
+a {
+  display: inline-block;
+  font: 300 18px/1em $font;
+  color: $blue;
+  transition: all $transition;
+
+  &:hover {
+    color: $grey90;
+  }
+}
+
+.blue {
+  color: $blue;
+}
+
+.grey {
+  color: $grey50;
+}
+
+.heading {
+  position: relative;
+  margin-bottom: 45px;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -15px;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: $blue;
+  }
+}
+
+.small {
+  display: inline-block;
+  font-size: 13px;
+  color: $grey90;
+}
+
+.wrapper {
+  position: relative;
+  max-width: 1280px;
+  width: 90%;
+  margin: 0 auto;
+}
+
+#header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100px;
+  z-index: 99;
+  background: $white;
+
+  &:after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    max-width: 1280px;
+    height: 1px;
+    background: $blue;
+  }
+}
+
+#site-nav {
+  position: relative;
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+
+    li {
+      margin-right: 40px;
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+  }
+}
+
+#site-logo {
+  position: absolute;
+  top: -50px;
+  left: 0;
+  transform: translateY(50%);
+  display: block;
+  height: 50px;
+  width: 50px;
+}
+
+.slice {
+  position: relative;
+  padding: 45px 0;
+
+  &.large {
+    padding: 90px 0;
+  }
+}
+
+.projects {
+  ul {
+    li {
+      position: relative;
+      margin-bottom: 20px;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+.experiences {
+  .experience {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+
+    p {
+      margin-bottom: 4px;
+    }
+
+    .title,
+    .position,
+    .duration {
+      width: 33.33%;
+      text-align: right;
+    }
+
+    .title {
+      text-align: left;
+      font-size: 18px;
+    }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
+}
+
+#footer {
+  position: relative;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 45px;
+
+  .copyright {
+    margin: 0 auto;
+    text-align: center;
+    font-size: 14px;
+    color: $blue;
+  }
 }
