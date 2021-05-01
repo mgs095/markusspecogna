@@ -82,6 +82,10 @@ a:hover {
   background: #3333ff;
 }
 
+.title {
+  margin-bottom: 45px;
+}
+
 .small {
   display: inline-block;
   font-size: 13px;
@@ -119,9 +123,24 @@ a:hover {
   background: #3333ff;
 }
 
-#site-nav {
+body:not(.home) #site-nav {
   position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
+body:not(.home) #site-nav ul {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+body:not(.home) #site-nav ul li {
+  margin-right: 40px;
+}
+body:not(.home) #site-nav ul li:last-child {
+  margin-right: 0;
+}
+
 #site-nav ul {
   display: flex;
   align-items: center;
@@ -200,9 +219,86 @@ a:hover {
   color: #3333ff;
 }
 
+.gallery .image {
+  position: relative;
+  display: block;
+  margin-bottom: 30px;
+}
+.gallery .image:before {
+  content: "";
+  display: block;
+  padding-top: 57%;
+}
+.gallery .image > img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+.gallery .image.mobile > img {
+  object-fit: contain;
+}
+.gallery .split {
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+.gallery .split .image {
+  width: 50%;
+  height: 760px;
+}
+.gallery .split .image:before {
+  content: none;
+  display: none;
+}
+.gallery .split .image.contain > img {
+  object-fit: contain;
+}
+
+.the-content {
+  display: block;
+  padding: 20px 0;
+}
+
+.team {
+  padding: 12px 0;
+}
+.team a {
+  position: relative;
+  color: #080808;
+  transition: all 150ms ease-in-out;
+}
+.team a:hover {
+  color: #3333ff;
+}
+.team a:after {
+  content: "";
+  display: block;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: #3333ff;
+}
+
+.tech {
+  padding: 12px 0;
+}
+
 @media (max-width: 1199px) {
   html,
 body {
+    font-size: 16px;
+  }
+
+  a {
     font-size: 16px;
   }
 }
@@ -238,6 +334,33 @@ body {
   }
   #footer .copyright {
     font-size: 12px;
+  }
+
+  .gallery .split {
+    display: block;
+  }
+  .gallery .split .image {
+    width: auto;
+    height: auto;
+  }
+  .gallery .split .image:before {
+    content: "";
+    display: block;
+    padding-top: 57%;
+  }
+  .gallery .split .image > img {
+    object-fit: cover;
+  }
+  .gallery .split .image.mobile > img {
+    object-fit: contain;
+  }
+  .gallery .split .image.contain > img {
+    object-fit: cover;
+  }
+
+  .team span,
+.tech span {
+    display: block;
   }
 }
 /* CSS Document */
