@@ -3,6 +3,10 @@
   body {
     font-size: 16px;
   }
+
+  a {
+    font-size: 16px;
+  }
 }
 
 @media (max-width: 991px) {
@@ -44,6 +48,46 @@
 
     .copyright {
       font-size: 12px;
+    }
+  }
+
+  .gallery {
+    .split {
+      display: block;
+
+      .image {
+        width: auto;
+        height: auto;
+
+        &:before {
+          content: "";
+          display: block;
+          padding-top: 57%;
+        }
+
+        > img {
+          object-fit: cover;
+        }
+
+        &.mobile {
+          > img {
+            object-fit: contain;
+          }
+        }
+
+        &.contain {
+          > img {
+            object-fit: cover;
+          }
+        }
+      }
+    }
+  }
+
+  .team,
+  .tech {
+    span {
+      display: block;
     }
   }
 }
