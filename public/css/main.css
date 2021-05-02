@@ -173,7 +173,7 @@ body:not(.home) #site-nav ul li:last-child {
 
 .projects ul li {
   position: relative;
-  margin-bottom: 20px;
+  margin-bottom: 45px;
 }
 .projects ul li:last-child {
   margin-bottom: 0;
@@ -265,6 +265,12 @@ body:not(.home) #site-nav ul li:last-child {
   display: block;
   padding: 20px 0;
 }
+.the-content p {
+  padding-bottom: 10px;
+}
+.the-content p:last-child {
+  padding-bottom: 0;
+}
 
 .team {
   padding: 12px 0;
@@ -308,6 +314,10 @@ body {
   }
   .slice.large {
     padding: 50px 0;
+  }
+
+  .projects ul li {
+    margin-bottom: 20px;
   }
 
   .experiences .experience {

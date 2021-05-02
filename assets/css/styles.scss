@@ -182,7 +182,7 @@ body:not(.home) {
   ul {
     li {
       position: relative;
-      margin-bottom: 20px;
+      margin-bottom: 45px;
 
       &:last-child {
         margin-bottom: 0;
@@ -296,6 +296,14 @@ body:not(.home) {
 .the-content {
   display: block;
   padding: 20px 0;
+
+  p {
+    padding-bottom: 10px;
+
+    &:last-child {
+      padding-bottom: 0;
+    }
+  }
 }
 
 .team {
