@@ -1,6 +1,6 @@
 @import "base.scss";
 
-$transition: 0ms ease-in-out;
+$transition: .75s cubic-bezier(.19, 1.04, .25, 1);
 $black: #343a40;
 $white: #f3f4ed;
 $green: #c5d7bd;
@@ -56,8 +56,41 @@ body {
     color: $white;
     background: $black;
 
+    #home{
+
+      .projects {
+      
+        .the-project {
+      
+          h3 {
+      
+            a {
+      
+              &:after {
+                background-color: $white;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    footer{
+
+      a{
+
+        &:after{
+          background-color: $white;
+        }
+      }
+    }
+
     #toggle{
       background: $white;
+
+      &:before{
+        border-color: $white;
+      }
     }
   }
 }
@@ -89,6 +122,7 @@ header {
 }
 
 #toggle {
+  position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -98,13 +132,38 @@ header {
   background: $black;
   appearance: none;
   outline: none;
+  transition: all $transition;
+
+  &:before{
+    content: '';
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: calc(100% + 8px);
+    width: calc(100% + 8px);
+    border: 1px solid $black;
+    border-radius: 50%;
+    transform-origin: center;
+    transition: all $transition;
+  }
 
   &.dark {
     background: $white;
+
+    &:before{
+      border-color: $white;
+    }
   }
 
   &:hover {
     background: $green;
+
+    &:before{
+      height: calc(100% + 16px);
+      width: calc(100% + 16px);
+    }
   }
 }
 
@@ -116,16 +175,35 @@ footer {
   z-index: 1;
 
   a {
+    position: relative;
     text-transform: uppercase;
     margin-right: 40px;
     transition: all $transition;
+    display: inline-block;
+    
+    &:after {
+      content: '';
+      display: block;
+      position: absolute;
+      top: calc(100% + 2px);
+      left: 0;
+      width: 100%;
+      height: 1px;
+      background-color: $black;
+      transform-origin: left;
+      transform: scaleX(0);
+      transition: all $transition;
+    }
+    
+    &:hover {
+    
+      &:after {
+        transform: scaleX(1);
+      }
+    }
 
     &:last-child {
       margin-right: 0;
-    }
-
-    &:hover {
-      color: $green;
     }
   }
 }
@@ -157,17 +235,36 @@ footer {
       }
 
       h3 {
+        position: relative;
         font-size: 24px;
         text-transform: uppercase;
-        margin-bottom: 4px;
+        margin-bottom: 10px;
         transition: all $transition;
 
         a {
+          position: relative;
           transition: all $transition;
           display: inline-block;
 
+          &:after{
+            content: '';
+            display: block;
+            position: absolute;
+            top: calc(100% + 4px);
+            left: 0;
+            width: 100%;
+            height: 1px;
+            background-color: $black;
+            transform-origin: left;
+            transform: scaleX(0);
+            transition: all $transition;
+          }
+
           &:hover {
-            color: $green;
+
+            &:after{
+              transform: scaleX(1);
+            }
           }
         }
       }
